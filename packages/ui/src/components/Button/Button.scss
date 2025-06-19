@@ -1,0 +1,126 @@
+.ui-button {
+    position: relative;
+    border: none;
+    font-size: 0.875rem;
+    padding: 6px 16px;
+    border-radius: var(--radius);
+    transition: all $animation;
+    overflow: hidden;
+    min-height: 37px;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    &--noHover {
+        background-color: transparent !important;
+    }
+
+    &--small {
+        font-size: 0.8125rem;
+        padding: 4px 10px;
+        min-height: 33px;
+    }
+
+    &--large {
+        font-size: 0.9375rem;
+        padding: 8px 22px;
+        min-height: 41px;
+    }
+
+    &--fullWidth {
+        display: block;
+        width: 100%;
+    }
+
+    @each $color in $colors {
+        &--#{$color} {
+            color: var(--#{$color}-contrast);
+            background-color: var(--#{$color});
+
+            &:disabled {
+                background-color: var(--text-disabled);
+                color: var(--text-secondary);
+                cursor: not-allowed;
+
+                .ui-button__icon {
+                    color: var(--text-secondary) !important;
+                }
+            }
+
+            .ui-button__icon {
+                color: var(--#{$color}-contrast);
+                font-size: 16px !important;
+
+                &--left {
+                    margin-right: 10px;
+                }
+
+                &--right {
+                    margin-left: 10px;
+                }
+            }
+
+            .ui-button__loading {
+                color: var(--#{$color}-contrast) !important;
+
+                &--small {
+                    margin-bottom: -5px;
+                }
+
+                &--medium {
+                    margin-bottom: -4px;
+                }
+
+                &--large {
+                    margin-bottom: -3px;
+                }
+            }
+
+            &--outlined {
+                background-color: transparent;
+                border: 1px solid var(--divider);
+                color: var(--#{$color});
+
+                &:hover {
+                    background-color: var(--#{$color}-opacity);
+                    border: 1px solid transparent;
+                }
+
+                .ui-button__icon {
+                    color: var(--#{$color}) !important;
+                    font-size: 16px !important;
+
+                    &--left {
+                        margin-right: 10px;
+                    }
+
+                    &--right {
+                        margin-left: 10px;
+                    }
+                }
+            }
+
+            &--text {
+                background-color: transparent;
+                color: var(--#{$color});
+
+                &:hover {
+                    background-color: var(--#{$color}-opacity);
+                }
+
+                .ui-button__icon {
+                    color: var(--#{$color}) !important;
+                    font-size: 16px !important;
+
+                    &--left {
+                        margin-right: 10px;
+                    }
+
+                    &--right {
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

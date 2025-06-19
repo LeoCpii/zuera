@@ -1,0 +1,61 @@
+@use '../Layout.scss' as *;
+
+.ui-sidebar {
+    width: 200px;
+    z-index: 2;
+    position: sticky;
+    top: 0;
+    border-right: 1px solid var(--divider);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    height: calc(100vh - #{$header-height});
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: var(--background-default);
+    transition: all $animation;
+
+    &--compact {
+        max-width: 56px;
+    }
+
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 15px;
+        padding: 8px 16px;
+        transition: all $animation;
+        cursor: pointer;
+        position: relative;
+        color: var(--text-secondary);
+        border-right: 1.5px solid transparent;
+
+        &--active {
+            color: var(--primary);
+            border-right: 1.5px solid var(--primary);
+            background-color: var(--primary-opacity);
+        }
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.04);
+        }
+
+        &__label {
+            white-space: nowrap;
+            font-size: $font-medium;
+        }
+
+        &--active {
+            .ui-sidebar__button__icon {
+                color: var(--primary) !important;
+            }
+        }
+
+        &__icon {
+            color: var(--text-secondary) !important;
+        }
+    }
+}

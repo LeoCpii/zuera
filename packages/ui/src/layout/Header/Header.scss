@@ -1,0 +1,25 @@
+@use '../Layout.scss' as *;
+
+.ui-header {
+    height: $header-height;
+    color: var(--primary);
+    padding: 0px 32px;
+    transition: all $animation;
+    border-bottom: 1px solid var(--divider);
+    background-color: var(--background-default);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__logo {
+        button {
+            border: none;
+            background-color: transparent;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+}

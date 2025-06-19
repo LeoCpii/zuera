@@ -1,0 +1,89 @@
+.ui-donut {
+    &__chart {
+        border-radius: 50%;
+        transition: all .2s;
+        position: relative;
+
+        &::after {
+            content: '';
+            background: var(--background-default);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &__label {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            z-index: 2;
+
+            font-family: $font-regular;
+        }
+
+        &__tooltip {
+            position: absolute;
+            top: 50%;
+            opacity: 0;
+            width: fit-content;
+            transition: all $animation;
+            z-index: 80;
+
+            &-right {
+                right: 0;
+                transform: translate(100%, -50%);
+
+                &--visible {
+                    opacity: 1;
+                    transform: translate(110%, -50%);
+                }
+            }
+
+            &-left {
+                left: 0;
+                transform: translate(-100%, -50%);
+
+                &--visible {
+                    opacity: 1;
+                    transform: translate(-110%, -50%);
+                }
+            }
+
+            &__identifier {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    &__legend {
+        gap: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        cursor: pointer;
+        color: var(--text-secondary);
+
+        padding: 4px 8px;
+        border-radius: var(--radius);
+
+        transition: all $animation;
+
+        &:hover {
+            background-color: var(--grey-opacity);
+        }
+
+        &__square {
+            width: 15px;
+            height: 15px;
+            border-radius: var(--radius);
+        }
+    }
+}

@@ -1,0 +1,21 @@
+.ui-card {
+    position: relative;
+    border-radius: var(--radius);
+    border: 1px solid var(--divider);
+    background-color: var(--background-default);
+    transition: all $animation;
+
+    &--clickable {
+        cursor: pointer;
+
+        &:hover {
+            box-shadow: $boxShadowRegular;
+            border-color: var(--primary-light);
+        }
+    }
+
+    &__content {
+        padding: 16px;
+        width: 100%;
+    }
+}

@@ -1,0 +1,113 @@
+// @use "../../styles/main.scss" as *
+
+.ui-guide-overlay {
+    top: 0;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.64);
+}
+
+.ui-guide__frame {
+    right: 0;
+    width: max-content;
+    max-width: 550px;
+    position: absolute;
+    transition: all $animation;
+
+    &--active {
+        z-Index: 9999;
+        box-shadow: 0 0px 30px rgba(255, 255, 255, .1);
+    }
+
+    &--left-top {
+        left: -10px;
+        transform: translate(-100%, 0%);
+    }
+
+    &--left-bottom {
+        left: -10px;
+        bottom: 0;
+        transform: translate(-100%, 0%);
+    }
+
+    &--left-center {
+        left: -10px;
+        top: 50%;
+        transform: translate(-100%, -50%);
+    }
+
+    &--right-top {
+        right: -10px;
+        transform: translate(100%, 0%);
+    }
+
+    &--right-bottom {
+        left: 0;
+        right: 0;
+        transform: translate(100%, 0%);
+    }
+
+    &--right-center {
+        right: -10;
+        top: 50%;
+        transform: translate(100%, -50%);
+    }
+
+    &--center-top {
+        left: 50%;
+        top: -10px;
+        transform: translate(-50%, -100%);
+    }
+
+    &--center-bottom {
+        left: 50%;
+        bottom: -10px;
+        transform: translate(-50%, 100%);
+    }
+
+    &--center-center {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+
+    &__content {
+        min-width: 250px;
+        width: fit-content;
+        transform: scale(0);
+        transition: all $animation;
+
+        &--active {
+            transform: scale(1);
+        }
+    }
+}
+
+.ui-guide__step {
+    border-radius: var(--radius);
+    position: relative;
+    transition: all $animation;
+
+    &--active {
+        z-index: 5;
+    }
+}
+
+.ui-guide__bullet {
+    width: 6px;
+    height: 6px;
+    cursor: pointer;
+    border-radius: 50%;
+    background: #ccc;
+    transform: all $animation;
+
+    &--active {
+        background: #999;
+        width: 15px;
+    }
+}

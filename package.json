@@ -1,0 +1,32 @@
+{
+  "name": "zuera",
+  "version": "1.0.0",
+  "author": "leonardo.goncalves <leogoncalves.contato@gmail.com>",
+  "private": true,
+  "main": "index.js",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*",
+    "packages/app/*"
+  ],
+  "scripts": {
+    "lint": "yarn workspaces foreach -ptv run lint",
+    "build": "yarn workspaces foreach -ptv run build",
+    "test": "yarn workspaces foreach -ptv run test"
+  },
+  "devDependencies": {
+    "@zuera/common": "*",
+    "@zuera/services": "*",
+    "@zuera/toolkit": "*",
+    "@zuera/ui": "*",
+    "eslint": "^9.22.0",
+    "eslint-plugin-import-helpers": "^2.0.1",
+    "eslint-plugin-react": "^7.37.4",
+    "globals": "^16.0.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "typescript": "latest",
+    "typescript-eslint": "^8.26.0"
+  },
+  "packageManager": "yarn@3.2.1"
+}

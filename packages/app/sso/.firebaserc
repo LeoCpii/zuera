@@ -1,0 +1,23 @@
+{
+  "projects": {
+    "production": "clube-do-afiliado",
+    "staging": "clube-do-afiliado-stg"
+  },
+  "targets": {
+    "clube-do-afiliado": {
+      "hosting": {
+        "sso": [
+          "sso-clube-do-afiliado"
+        ]
+      }
+    },
+    "clube-do-afiliado-stg": {
+      "hosting": {
+        "sso": [
+          "stg-sso-clube-do-afiliado"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

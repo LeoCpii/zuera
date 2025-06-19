@@ -1,0 +1,58 @@
+// @use "../../styles/main.scss" as *
+
+.ui-stackbar {
+    width: 100%;
+    height: 60px;
+    overflow: hidden;
+
+    border-radius: var(--radius);
+    background-color: var(--background-default);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3px;
+
+    &__stacked {
+        width: 0;
+        height: 100%;
+        transition: all $animation;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-family: $font-regular;
+
+        @each $color in $colors {
+            &--#{$color} {
+                color: var(--#{$color}-contrast);
+                background-color: var(--#{$color});
+            }
+        }
+    }
+
+    &__legend {
+        gap: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        cursor: pointer;
+        color: var(--text-secondary);
+
+        padding: 4px 8px;
+        border-radius: var(--radius);
+
+        transition: all $animation;
+
+        &:hover {
+            background-color: var(--grey-opacity);
+        }
+
+        &__square {
+            width: 15px;
+            height: 15px;
+            border-radius: var(--radius);
+        }
+    }
+}

@@ -1,0 +1,58 @@
+// @use "../../styles/main.scss" as *
+
+.colors {
+    .color {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+        width: 130px;
+        margin: 10px;
+        border-radius: var(--radius);
+        color: white;
+        font-size: 14px;
+        transition: all $animation;
+        cursor: pointer;
+        box-shadow: $boxShadowSmall;
+
+        &:hover {
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        }
+    }
+
+    @each $color in $colors {
+        .#{$color} {
+            &--main {
+                background-color: var(--#{$color});
+            }
+
+            &--light {
+                background-color: var(--#{$color}-light);
+            }
+
+            &--dark {
+                background-color: var(--#{$color}-dark);
+            }
+        }
+    }
+
+    @each $color in $colors-text {
+        .text-#{$color} {
+            background-color: var(--text-#{$color});
+
+            color: black;
+        }
+    }
+
+    @each $color in $colors-background {
+        .background-#{$color} {
+            background-color: var(--background-#{$color});
+        }
+    }
+
+    @each $color in $colors-divider {
+        .#{$color} {
+            background-color: var(--#{$color});
+        }
+    }
+}

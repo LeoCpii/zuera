@@ -1,0 +1,37 @@
+.grid {
+    @include grid(15px, 12);
+
+    &__item {
+        @each $size in $short-sizes {
+            &--#{$size} {
+                @for $i from 1 through 12 {
+                    &-#{$i} {
+                        @if $size =='sm' {
+                            @include for-sm {
+                                @include grid-column-span($i);
+                            }
+                        }
+
+                        @if $size =='md' {
+                            @include for-md {
+                                @include grid-column-span($i);
+                            }
+                        }
+
+                        @if $size =='lg' {
+                            @include for-lg {
+                                @include grid-column-span($i);
+                            }
+                        }
+
+                        @if $size =='xl' {
+                            @include for-xl {
+                                @include grid-column-span($i);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

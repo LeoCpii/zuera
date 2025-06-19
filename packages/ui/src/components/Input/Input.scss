@@ -1,0 +1,110 @@
+.ui-input-container {
+    width: fit-content;
+    position: relative;
+
+    &--full-width {
+        width: 100%;
+    }
+
+    &--gutter-bottom {
+        margin-bottom: 10px;
+    }
+}
+
+.ui-input-label {
+    font-size: $font-small;
+    color: var(--text-secondary);
+    display: block;
+    margin-bottom: 5px;
+
+    &--error {
+        color: var(--error);
+    }
+}
+
+.ui-input {
+    cursor: text;
+    border-radius: var(--radius);
+    border: 1px solid var(--divider);
+    font-family: $font-regular;
+    position: relative;
+    background-color: var(--background-default);
+    transition: all $animation;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:focus-within {
+        outline: 2px solid var(--primary);
+    }
+
+    &--error {
+        border-color: var(--error);
+    }
+
+    &--disabled {
+        cursor: not-allowed;
+        background: var(--divider);
+        color: var(--text-disabled);
+    }
+
+    input {
+        background: transparent;
+        height: 100%;
+        width: 100%;
+        border: none;
+        outline: none;
+        user-select: none;
+        padding: $proportion;
+        font: inherit;
+        color: var(--text-primary);
+        transition: all $animation;
+
+        &:-internal-autofill-selected {
+            -webkit-text-fill-color: var(--divider);
+        }
+
+        &::placeholder {
+            color: var(--text-secondary);
+            opacity: 1;
+        }
+    }
+
+    &__helper-text {
+        opacity: 0;
+        margin-top: 5px;
+        transition: all $animation;
+        font-size: $font-small;
+
+        &--visible {
+            opacity: 1;
+        }
+
+        &--error {
+            color: var(--error);
+        }
+    }
+
+    &__icon {
+        &--margin-left {
+            margin-right: 8px;
+            margin-left: -8px;
+        }
+
+        &--margin-right {
+            margin-right: -8px;
+            margin-left: 8px;
+        }
+
+        &--padding-left {
+            padding-right: 8px;
+            padding-left: -8px;
+        }
+
+        &--padding-right {
+            padding-right: -8px;
+            padding-left: 8px;
+        }
+    }
+}

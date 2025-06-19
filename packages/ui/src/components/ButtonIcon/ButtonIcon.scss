@@ -1,0 +1,22 @@
+// @use "../../styles/main.scss" as *
+
+.ui-button-icon {
+    position: relative;
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all $animation;
+
+    &:hover {
+        background-color: var(--divider);
+    }
+
+    @each $color in $colors {
+        &--#{$color} {
+            &:hover {
+                background-color: var(--#{$color}-opacity);
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+// @use "../../styles/main.scss" as *
+
+.ui-icon {
+    transition: all $animation;
+
+    &.small {
+        font-size: $icon-small;
+    }
+
+    &.medium {
+        font-size: $icon-medium;
+    }
+
+    &.large {
+        font-size: $icon-large;
+    }
+
+    @each $color in $colors {
+        &.#{$color} {
+            color: var(--#{$color});
+        }
+
+        &.#{$color}-contrast {
+            color: var(--#{$color}-contrast);
+        }
+    }
+}

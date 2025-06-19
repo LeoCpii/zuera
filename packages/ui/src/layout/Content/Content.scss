@@ -1,0 +1,17 @@
+@use '../Layout.scss' as *;
+
+.ui-content {
+    padding: $spacing-xlarge;
+    overflow-y: auto;
+    width: calc(100% - #{$sidebar-width});
+    min-height: calc(100vh - #{$header-height});
+    transition: all $animation;
+}
+
+.ui-content-fullwidth {
+    width: 100%;
+    overflow-y: auto;
+    padding: $spacing-xlarge;
+    min-height: calc(100vh - #{$header-height});
+    transition: all $animation;
+}

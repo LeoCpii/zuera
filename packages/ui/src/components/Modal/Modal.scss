@@ -1,0 +1,39 @@
+// @use "../../styles/main.scss" as *
+
+.ui-modal__backdrop {
+    position: fixed;
+    z-index: 1300;
+    inset: 0px;
+    background-color: rgba(0, 0, 0, 0.64);
+    opacity: 0;
+    transition: all $animation;
+
+    &--show {
+        opacity: 1;
+    }
+}
+
+.ui-modal__container {
+    height: 100%;
+    outline: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 16px;
+}
+
+.ui-modal {
+    width: 600px;
+    box-shadow: $boxShadowSmall;
+    ;
+    transition: all $animation;
+    transform: translateY(50px);
+
+    &--show {
+        transform: translateY(0px);
+    }
+
+    &__content {
+        margin-top: 16px;
+    }
+}

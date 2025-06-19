@@ -1,0 +1,110 @@
+.ui-checkbox-container {
+    .ui-checkbox__helper-text {
+        opacity: 0;
+        margin-top: 5px;
+        transition: all $animation;
+        font-size: $font-small;
+
+        &--visible {
+            opacity: 1;
+        }
+
+        &--error {
+            color: var(--error);
+        }
+    }
+}
+
+.ui-checkbox {
+    width: 100%;
+    padding: $proportion;
+    border-radius: var(--radius);
+    color: var(--text-primary);
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    font-family: $font-light;
+
+    cursor: pointer;
+    transition: all $animation;
+
+    @each $color in $colors {
+        &--#{$color} {
+            input[type=checkbox] {
+                border: 2px solid var(--#{$color});
+            }
+
+            input[type=checkbox]:checked {
+                background-color: var(--#{$color});
+            }
+
+            input[type=checkbox]:before {
+                border: solid var(--#{$color}-opacity);
+                opacity: 0;
+            }
+
+            &:hover {
+                background-color: var(--#{$color}-opacity);
+            }
+
+            &:active {
+                background-color: var(--#{$color});
+            }
+
+            &--checked {
+                background-color: var(--#{$color}-opacity);
+
+                input[type=checkbox]:before {
+                    border: solid var(--#{$color}-contrast);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &--disabled {
+        color: var(--divider);
+        background-color: var(--text-disabled);
+    }
+
+    input[type=checkbox] {
+        position: relative;
+        border-radius: 2px;
+        background: none;
+        cursor: pointer;
+        line-height: 0;
+        margin: 0 .6em 0 0;
+        outline: 0;
+        padding: 0 !important;
+        vertical-align: text-top;
+        height: 20px;
+        width: 20px;
+        -webkit-appearance: none;
+        opacity: .5;
+    }
+
+    input[type=checkbox]:hover {
+        opacity: 1;
+    }
+
+    input[type=checkbox]:checked {
+        opacity: 1;
+    }
+
+    input[type=checkbox]:before {
+        content: '';
+        position: absolute;
+        right: 50%;
+        top: 50%;
+        width: 4px;
+        height: 10px;
+        border-width: 0 2px 2px 0;
+        margin: -1px -1px 0 -1px;
+        transform: rotate(45deg) translate(-50%, -50%);
+        z-index: 2;
+        transition: all $animation;
+    }
+}

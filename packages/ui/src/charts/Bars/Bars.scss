@@ -1,0 +1,14 @@
+.ui-bars {
+    height: 150px;
+
+    width: 150px;
+
+    &__bar {
+        width: 50px;
+        border-radius: var(--radius);
+        transition: all $animation;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

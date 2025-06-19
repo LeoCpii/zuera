@@ -1,0 +1,74 @@
+.ui-table {
+    width: 100%;
+    border-radius: var(--radius);
+
+    overflow: hidden;
+    border-spacing: 0px;
+    border-collapse: separate;
+
+    &__header {
+        td {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            padding: $proportion;
+            font-family: $font-semibold;
+            color: var(--secondary-contrast);
+            color: var(--text-primary);
+            border-right: 1px solid var(--divider);
+            border-bottom: 1px solid var(--divider);
+            background-color: var(--background-default);
+
+            transition: all $animation;
+
+            &:last-child {
+                border-right: 0;
+            }
+        }
+    }
+
+    &__body {
+        tr {
+            transition: all $animation;
+            background-color: var(--background-default);
+            transition: all $animation;
+
+            &:hover {
+                background-color: var(--background-paper);
+            }
+
+            td {
+                padding: $proportion;
+                font-size: 0.875rem;
+                border: none;
+                border-right: 1px solid var(--divider);
+                border-bottom: 1px solid var(--divider);
+                color: var(--text-primary);
+                transition: all $animation;
+
+                &:last-child {
+                    border-right: none;
+                }
+            }
+
+            &:last-child {
+                td {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+
+    &__cell {
+        &--center {
+            text-align: center;
+        }
+
+        &--right {
+            text-align: right;
+        }
+
+        &--left {
+            text-align: left;
+        }
+    }
+}

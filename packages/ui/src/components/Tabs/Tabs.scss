@@ -1,0 +1,100 @@
+.ui-tabs {
+    display: flex;
+    position: relative;
+    align-items: center;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &__button {
+        width: 100%;
+        min-width: 120px;
+        border: none;
+        text-transform: uppercase;
+        background-color: transparent;
+
+        height: 48px;
+        font-weight: 700;
+        white-space: nowrap;
+        color: var(--text-secondary);
+
+        cursor: pointer;
+        transition: all 0.3s;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @each $color in $colors {
+            &--active-#{$color} {
+                color: var(--#{$color});
+            }
+        }
+
+        &--line {
+            border-bottom: 2px solid var(--divider);
+        }
+
+        &--disabled {
+            color: var(--text-disabled);
+            cursor: not-allowed;
+        }
+
+        &__icon {
+            opacity: 1;
+            margin-right: 8px;
+            transition: all $animation;
+
+            &--omit {
+                opacity: 0;
+            }
+        }
+    }
+
+    &__marker {
+        left: 0;
+        bottom: 0;
+        position: absolute;
+        transition: all 0.4s;
+
+        font-family: $font-regular;
+
+        &--line {
+            height: 2px;
+
+            @each $color in $colors {
+                &--#{$color} {
+                    background-color: var(--#{$color});
+                }
+            }
+        }
+
+        &--rounded {
+            height: 100%;
+            border-radius: var(--radius);
+            text-transform: uppercase;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 0.875rem;
+
+            @each $color in $colors {
+                &--#{$color} {
+                    background-color: var(--#{$color}-opacity);
+                    color: var(--#{$color});
+                }
+            }
+        }
+
+        &__icon {
+            margin-right: 8px;
+        }
+    }
+}

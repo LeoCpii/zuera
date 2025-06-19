@@ -1,0 +1,24 @@
+.ui-tooltip {
+    position: absolute;
+    transition: all $animation;
+    width: fit-content;
+    border-radius: var(--radius);
+    padding: 4px 8px;
+    font-size: 11px;
+    background: var(--grey);
+    color: var(--grey-contrast);
+    box-shadow: $boxShadowSmall;
+    text-align: center;
+
+    min-width: max-content;
+
+    opacity: 0;
+    transform: scale(0.9);
+
+    z-index: 9999;
+
+    &--visible {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

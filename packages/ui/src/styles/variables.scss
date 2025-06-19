@@ -1,0 +1,114 @@
+:root {
+    --info: #72e4fc;
+    --info-light: #d6f7fe;
+    --info-dark: #0ed1fa;
+    --info-contrast: #000000;
+    --info-opacity: #72e4fc33;
+    --error: #ff5377;
+    --error-light: #ffb9c8;
+    --error-dark: #ec0031;
+    --error-contrast: #ffffff;
+    --error-opacity: #ff537733;
+    --warning: #FF9457;
+    --warning-light: #ffd5bd;
+    --warning-dark: #f05700;
+    --warning-contrast: #000000;
+    --warning-opacity: #FF945733;
+    --success: #36e79b;
+    --success-light: #91f2c8;
+    --success-dark: #14a366;
+    --success-contrast: #000000;
+    --success-opacity: #36e79b33;
+    --primary: #6c37f4;
+    --primary-light: #b398f9;
+    --primary-dark: #3c0abb;
+    --primary-contrast: #ffffff;
+    --primary-opacity: #6c37f433;
+    --secondary: #72e4fc;
+    --secondary-light: #d6f7fe;
+    --secondary-dark: #0ed1fa;
+    --secondary-contrast: #000000;
+    --secondary-opacity: #72e4fc33;
+    --grey: #F4F4F4;
+    --grey-light: #ffffff;
+    --grey-dark: #c1c1c1;
+    --grey-contrast: #000000;
+    --grey-opacity: #F4F4F433;
+    --text-primary: rgb(31, 41, 55);
+    --text-secondary: rgb(131, 143, 161);
+    --text-disabled: rgb(209, 213, 219);
+    --background-paper: #f9f8f9;
+    --background-default: #FFF;
+    --divider: rgba(0, 0, 0, 0.12);
+    --radius: 8px;
+    --spacing: 8px;
+}
+
+$colors: (
+    'primary',
+    'secondary',
+    'error',
+    'success',
+    'info',
+    'warning'
+);
+
+$colors-text: (
+    'primary',
+    'secondary',
+    'disabled'
+);
+
+$colors-background: (
+    'paper',
+    'default'
+);
+
+$colors-divider: (
+    'divider'
+);
+
+/* TRANSITION */
+$animation: .3s cubic-bezier(0.4, 0.0, 0.2, 1);
+
+/* ICON SIZE */
+$icon-small: 16px;
+$icon-medium: 24px;
+$icon-large: 32px;
+
+/* FONT SIZE */
+$font-small: 12px;
+$font-medium: 16px;
+$font-large: 22px;
+
+$sizes: (
+    'small',
+    'large',
+    'medium'
+);
+
+$short-sizes: (
+    'xl',
+    'lg',
+    'md',
+    'sm',
+);
+
+/* FONT FAMILY */
+$font-regular: "zuera-regular" !important;
+$font-light: "zuera-regular" !important;
+$font-bold: "zuera-regular" !important;
+$font-semibold: "zuera-regular" !important;
+
+/* FONT FAMILY */
+$spacing-regular: 16px;
+$spacing-small: 8px;
+$spacing-xlarge: 32px;
+
+/* PROPORTION */
+$proportion: 12px 16px;
+
+/* BOX SHADOW */
+$boxShadowSmall: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+$boxShadowRegular: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+$boxShadowLarge: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);

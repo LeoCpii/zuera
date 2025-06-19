@@ -1,0 +1,84 @@
+.ui-switch-container {
+    margin: auto;
+    width: fit-content;
+    position: relative;
+}
+
+.ui-switch {
+    position: relative;
+
+    &__label {
+        font-size: $font-small;
+        color: var(--text-secondary);
+        display: block;
+        margin-bottom: 5px;
+
+        &--error {
+            color: var(--error);
+        }
+    }
+
+    &__checkbox {
+        height: 0;
+        width: 0;
+        visibility: hidden;
+        position: absolute;
+
+        &:checked+.ui-switch__box .ui-switch__button {
+            left: 100%;
+            transform: translate(calc(-100% - 4px), -50%);
+        }
+
+        @each $color in $colors {
+            &--#{$color} {
+                &:checked+.ui-switch__box {
+                    background-color: var(--#{$color});
+                }
+            }
+        }
+    }
+
+    &__box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        cursor: pointer;
+
+        width: 58px;
+        height: 24px;
+        background: var(--divider);
+        border-radius: 100px;
+        position: relative;
+        transition: background-color .2s;
+    }
+
+    &__button {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 4px;
+        width: 18px;
+        height: 18px;
+        border-radius: 45px;
+        transition: 0.2s;
+        background: #fff;
+        box-shadow: $boxShadowSmall;
+    }
+
+    &__helper-text {
+        opacity: 0;
+        margin-top: 5px;
+        transition: all $animation;
+        font-size: $font-small;
+
+        &--visible {
+            opacity: 1;
+        }
+
+        &--error {
+            color: var(--error);
+        }
+    }
+}

@@ -1,0 +1,40 @@
+.ui-avatar {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.25rem;
+    line-height: 1;
+    overflow: hidden;
+    user-select: none;
+    border: 1px solid var(--divider);
+
+    transition: all $animation;
+
+    &--rounded {
+        border-radius: var(--radius);
+    }
+
+    &--circular {
+        border-radius: 50%;
+    }
+
+    &--name {
+        background-color: var(--primary);
+        color: var(--primary-contrast);
+    }
+
+    &--icon {
+        color: var(--primary-contrast);
+        background-color: var(--primary);
+    }
+
+    &--clickable {
+        cursor: pointer;
+    }
+
+    &__icon {
+        color: currentColor !important;
+    }
+}
