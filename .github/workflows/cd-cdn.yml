@@ -13,6 +13,6 @@ jobs:
       - name: Firebase Deploy
         uses: w9jds/firebase-action@v13.15.0
         with:
-          args: deploy --only hosting
+          args: deploy --only hosting:cdn
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}

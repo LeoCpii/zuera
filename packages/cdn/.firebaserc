@@ -1,5 +1,14 @@
 {
   "projects": {
-    "default": "cdn-web-80894"
+    "default": "jogo-zuera",
+    "targets": {
+      "jogo-zuera": {
+        "hosting": {
+          "cdn": [
+            "cdn-zuera"
+          ]
+        }
+      }
+    }
   }
 }
