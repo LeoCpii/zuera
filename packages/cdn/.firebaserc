@@ -1,14 +1,15 @@
 {
   "projects": {
-    "default": "jogo-zuera",
-    "targets": {
-      "jogo-zuera": {
-        "hosting": {
-          "cdn": [
-            "cdn-zuera"
-          ]
-        }
+    "default": "jogo-zuera"
+  },
+  "targets": {
+    "jogo-zuera": {
+      "hosting": {
+        "cdn": [
+          "cdn-zuera"
+        ]
       }
     }
-  }
+  },
+  "etags": {}
 }
